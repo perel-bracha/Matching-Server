@@ -1,7 +1,7 @@
-const resetDB = require("./resetDB");
-const createDB = require("./createDB");
-const createTables = require("./createTables");
-const initialization = require("./initialization");
+const resetDB = require("./src/DB/resetDB");
+const createDB = require("./src/DB/createDB");
+const createTables = require("./src/DB/createTables");
+const initialization = require("./src/DB/initialization");
 async function startup() {
   console.log(`startup`);
   await resetDB();
