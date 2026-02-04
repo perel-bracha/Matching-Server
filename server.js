@@ -1,4 +1,4 @@
-// const conDB = require("./connectToDB");
+const conDB = require("./connectToDB");
 
 function deleteUsersTable() {
   conDB.query("DROP TABLE IF EXISTS users", function (err, result) {
