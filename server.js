@@ -49,7 +49,7 @@ async function createTables() {
     // "./sqlTables/apartments.sql",
     // "./sqlTables/users.sql",
     // "./sqlTables/donations.sql",
-        "./sqlTables/itemDonations.sql",
+        "itemDonations.sql",
   ];
 
   for (const file of tableFiles) {
