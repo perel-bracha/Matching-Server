@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const http = require("http");
 const socketIo = require("socket.io");
-import createTables from "./src/DB/createTables";
+import createTables from "src/DB/createTables";
 createTables()
 // const app = express();
 // const server = http.createServer(app);
