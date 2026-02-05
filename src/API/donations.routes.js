@@ -61,6 +61,8 @@ module.exports = (io) => {
       const donate = req.body;
       console.log(`post donate ${donate}`);
       const prevAmount = await donationService.getAllAmount();
+      console.log("1");
+      
       const newDonate = await donationService.createDonation(donate);
       console.log("📡 שולחת את האירוע newDonation לכל הלקוחות...");
       const fullDonate = await donationService.getFullDonation(newDonate.id);
