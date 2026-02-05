@@ -1,9 +1,10 @@
-// require("dotenv").config();
-// const express = require("express");
-// const cors = require("cors");
-// const http = require("http");
-// const socketIo = require("socket.io");
-
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const http = require("http");
+const socketIo = require("socket.io");
+import createTables from "./src/DB/createTables";
+createTables()
 // const app = express();
 // const server = http.createServer(app);
 // const io = socketIo(server, {
@@ -31,32 +32,3 @@
 // server.listen(PORT, () => {
 //   console.log(`Server is running on http://localhost:${PORT}`);
 // });
-const conDB = require("./src/DB/connectToDB");
-const fs = require("fs");
-
-function createTable(query, tableName) {
-  return new Promise((resolve, reject) => {
-    conDB.query(query, (err, result) => {
-      if (err) return reject(err);
-      console.log(`${tableName} table created`);
-      resolve(result);
-    });
-  });
-}
-import x from "./src/DB/sqlTables/"
-async function createTables() {
-  const tableFiles = [
-    // "./sqlTables/apartments.sql",
-    // "./sqlTables/users.sql",
-    // "./sqlTables/donations.sql",
-        "./src/DB/sqlTables/itemDonations",
-  ];
-
-  for (const file of tableFiles) {
-    const query = fs.readFileSync(file, "utf8");
-    const tableName = file.split("/").pop().split(".")[0];
-    await createTable(query, tableName);
-  }
-}
-createTables();
-module.exports = createTables;
