@@ -19,7 +19,7 @@ app.use(express.json()); // מאפשר שליחת JSON בבקשות
 // נתיבים לדוגמה
 app.use("/users", require("./src/API/users.routes"));
 app.use("/apartments", require("./src/API/apartments.routes"));
-app.use("/donations", require("./src/API/donations.routes"));
+app.use("/donations", require("./src/API/donations.routes")(io));
 app.use("/item_donations",require("./src/API/itemDonations.routes"))
 io.on("connection", (socket) => {
   console.log("לקוח מחובר");
