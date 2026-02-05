@@ -36,6 +36,8 @@
 // server.listen(PORT, () => {
 //   console.log(`Server is running on http://localhost:${PORT}`);
 // });
+const conDB = require("./src/DB/connectToDB");
+
 function deleteDonationsTable() {
   conDB.query("DROP TABLE IF EXISTS donations", function (err, result) {
     if (err) throw err;
