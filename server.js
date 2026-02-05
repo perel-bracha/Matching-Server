@@ -43,13 +43,13 @@ function createTable(query, tableName) {
     });
   });
 }
-
+import x from "./src/DB/sqlTables/"
 async function createTables() {
   const tableFiles = [
     // "./sqlTables/apartments.sql",
     // "./sqlTables/users.sql",
     // "./sqlTables/donations.sql",
-        "../src/DB/sqlTables/itemDonations.sql",
+        "./src/DB/sqlTables/itemDonations",
   ];
 
   for (const file of tableFiles) {
