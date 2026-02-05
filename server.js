@@ -6,8 +6,12 @@ const socketIo = require("socket.io");
 
 const app = express();
 const server = http.createServer(app);
+
 const io = socketIo(server, {
-  cors: { origin: "*" }, // מאפשר חיבורים מכל מקום
+  cors: {
+    origin: "https://your-react-app-url.com", // ה־URL של ה־React App
+    methods: ["GET", "POST"]
+  }
 });
 app.use(cors());
 app.use(express.json()); // מאפשר שליחת JSON בבקשות
